@@ -1,0 +1,16 @@
+# Mention by Lxct
+# Placeholders :
+# %PLAYER% => The one who has mentioned
+# %TARGET% => The one who was mentioned
+# Minecraft color code is obviously supported.
+
+symbol: "@" # @Name
+color: "&6"
+sendActionBar: true # Send a message in the action bar to the mentioned player
+sendChatMessage: false # Send a message in the chat to the mentioned player
+sendSound: true # Send a sound to the mentioned player
+actionBarMessage: "&a&l%PLAYER% mentioned you!"
+chatMessage: "&a&l%PLAYER% mentioned you!"
+soundName: "ENTITY_PLAYER_LEVELUP" # List available at https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+soundVolume: 1 # Volume (1 seems like a good value..)
+soundPitch: 0 # Change Pitch of the sound (0 = default)

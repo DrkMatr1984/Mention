@@ -1,0 +1,23 @@
+name: Mention
+version: 1.0
+api-version: 1.13
+description: Mention your players!
+author: Lxct
+main: me.lxct.mention.Mention
+
+commands:
+  mention:
+    description: Mention Interface
+    permission: mention.reload
+
+permissions:
+  mention.ignore:
+    description: You cannot mention these players.
+    default: false
+  mention.everyone:
+    description: Mention everyone.
+    default: op
+  mention.reload:
+    description: Reload Mention.
+    default: op
+
