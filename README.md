@@ -13,6 +13,7 @@ Permissions:
 mention.ignore => Ignore @mention
 mention.everyone => Use @everyone
 mention.reload => Use /mention reload
+mention.update => Check for updates
 ```
 
 ## Config
@@ -23,16 +24,24 @@ mention.reload => Use /mention reload
 # %TARGET% => The one who was mentioned
 # Minecraft color code is obviously supported.
 
+version: 1.0
+
 symbol: "@" # @Name
 color: "&6"
 sendActionBar: true # Send a message in the action bar to the mentioned player
 sendChatMessage: false # Send a message in the chat to the mentioned player
 sendSound: true # Send a sound to the mentioned player
-actionBarMessage: "&a&l%PLAYER% mentioned you!"
-chatMessage: "&a&l%PLAYER% mentioned you!"
 soundName: "ENTITY_PLAYER_LEVELUP" # List available at https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
 soundVolume: 1 # Volume (1 seems like a good value..)
 soundPitch: 0 # Change Pitch of the sound (0 = default)
+checkUpdates: true # Check for updates
+metrics: true # Send anonymous stats (Please set this to true) <3
+
+reload: "&aMention successfully reloaded!"
+actionBarMessage: "&a&l%PLAYER% mentioned you!"
+chatMessage: "&a&l%PLAYER% mentioned you!"
+update: "&a[Mention]&7 A new update is available at&a"
+updateFail: "&a[Mention]&c Update checker failed!"
 ```
 
 ## Compilation
@@ -52,4 +61,4 @@ I'd like to hear your comments ! <3
 
 ## Info
 Spigot Link: [https://www.spigotmc.org/resources/best-view-distance.61963/](https://www.spigotmc.org/resources/best-view-distance.61963/)
-Github Link: [https://github.com/Lxct/Mention](https://github.com/Lxct/BestViewDistance)
+Github Link: [https://github.com/Lxct/Mention](https://github.com/Lxct/Mention)
