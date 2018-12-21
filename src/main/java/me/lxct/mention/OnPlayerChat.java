@@ -40,6 +40,7 @@ public class OnPlayerChat implements Listener {
         }
         if (msg.contains(symbol + "EVERYONE") && event.getPlayer().hasPermission("mention.everyone")) {
             for (Player player : Bukkit.getOnlinePlayers()) {
+                vTarget = player;
                 if (useChat) {
                     player.sendMessage(formatMsg(chatMsg));
                 }
@@ -54,6 +55,7 @@ public class OnPlayerChat implements Listener {
         }
         if (msg.contains(symbol + "HERE") && event.getPlayer().hasPermission("mention.everyone")) {
             for (Player player : Bukkit.getOnlinePlayers()) {
+                vTarget = player;
                 if (useChat) {
                     player.sendMessage(formatMsg(chatMsg));
                 }
