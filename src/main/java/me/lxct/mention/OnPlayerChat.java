@@ -29,10 +29,10 @@ public class OnPlayerChat implements Listener {
                 if (playSound) {
                     player.playSound(player.getLocation(), sound, soundVolume, soundPitch);
                 }
-                if (message.contains(player.getName().toUpperCase())) {
-                    event.setMessage(event.getMessage().replaceAll("(?i)" + player.getName(), colorize(color + symbol + player.getName() + "&r")));
-                } else if (message.contains(symbol + player.getName().toUpperCase())) {
+                if (message.contains(symbol + player.getName().toUpperCase())) {
                     event.setMessage(event.getMessage().replaceAll(symbol + "(?i)" + player.getName(), colorize(color + symbol + player.getName() + "&r")));
+                } else if (message.contains(player.getName().toUpperCase())) {
+                    event.setMessage(event.getMessage().replaceAll("(?i)" + player.getName(), colorize(color + symbol + player.getName() + "&r")));
                 }
             }
         }

@@ -20,4 +20,7 @@ permissions:
   mention.reload:
     description: Reload Mention.
     default: op
+  mention.update:
+    description: See updates.
+    default: op
 

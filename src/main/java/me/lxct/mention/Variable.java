@@ -14,6 +14,10 @@ class Variable {
     static String actionBarMsg;
     static String chatMsg;
     static String symbol;
+    static String reloadMsg;
+    static boolean checkUpdates;
+    static String updateMsg;
+    static String failUpdate;
     static String color;
     static Sound sound;
     static boolean useActionBar;
@@ -27,7 +31,11 @@ class Variable {
     static Player vTarget;
 
     static void loadVariables(){
-        color = configYml.getString("color");
+        reloadMsg = configYml.getString("reload", "&aMention successfully reloaded!");
+        checkUpdates = configYml.getBoolean("checkUpdates", true);
+        updateMsg = configYml.getString("update", "&a[Mention]&7 A new update is available at&a");
+        failUpdate = configYml.getString("updateFail", "&a[Mention]&c Update checker failed!");
+        color = configYml.getString("color", "&6");
         actionBarMsg = configYml.getString("actionBarMessage", "&a&l%PLAYER% mentioned you!");
         chatMsg = configYml.getString("chatMessage", "&a&l%PLAYER% mentioned you!");
         symbol = configYml.getString("symbol", "@");
@@ -40,6 +48,15 @@ class Variable {
 
         if (!configYml.isString("color")) {
             Bukkit.getConsoleSender().sendMessage(colorize("[Mention] &4&lWARNING! \"color\" value is wrong!"));
+        }
+        if (!configYml.isString("reload")) {
+            Bukkit.getConsoleSender().sendMessage(colorize("[Mention] &4&lWARNING! \"reload\" value is wrong!"));
+        }
+        if (!configYml.isString("update")) {
+            Bukkit.getConsoleSender().sendMessage(colorize("[Mention] &4&lWARNING! \"update\" value is wrong!"));
+        }
+        if (!configYml.isString("updateFail")) {
+            Bukkit.getConsoleSender().sendMessage(colorize("[Mention] &4&lWARNING! \"updateFail\" value is wrong!"));
         }
         if (!configYml.isString("actionBarMessage")) {
             Bukkit.getConsoleSender().sendMessage(colorize("[Mention] &4&lWARNING! \"actionBarMessage\" value is wrong!"));
@@ -55,6 +72,9 @@ class Variable {
         }
         if (!configYml.isBoolean("sendChatMessage")) {
             Bukkit.getConsoleSender().sendMessage(colorize("[Mention] &4&lWARNING! \"sendChatMessage\" value is wrong!"));
+        }
+        if (!configYml.isBoolean("checkUpdates")) {
+            Bukkit.getConsoleSender().sendMessage(colorize("[Mention] &4&lWARNING! \"checkUpdates\" value is wrong!"));
         }
         if (!configYml.isBoolean("sendSound")) {
             Bukkit.getConsoleSender().sendMessage(colorize("[Mention] &4&lWARNING! \"sendSound\" value is wrong!"));

@@ -24,6 +24,13 @@
         </repository>
     </repositories>
     <dependencies>
+        <!-- BStats Metrics -->
+        <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-bukkit</artifactId>
+            <version>1.4</version>
+            <scope>compile</scope>
+        </dependency>
         <!--Spigot API -->
         <dependency>
             <groupId>org.spigotmc</groupId>

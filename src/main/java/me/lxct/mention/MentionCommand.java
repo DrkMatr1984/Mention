@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 
 import static me.lxct.mention.Functions.colorize;
 import static me.lxct.mention.Variable.loadVariables;
+import static me.lxct.mention.Variable.reloadMsg;
 
 public class MentionCommand implements CommandExecutor {
 
@@ -15,7 +16,7 @@ public class MentionCommand implements CommandExecutor {
             if (args[0].equalsIgnoreCase("reload") || sender.hasPermission("mention.reload")) {
                 Mention.plugin.reloadConfig();
                 loadVariables();
-                sender.sendMessage(colorize("&7Mention reloaded."));
+                sender.sendMessage(colorize(reloadMsg));
             }
         }
         return true;
