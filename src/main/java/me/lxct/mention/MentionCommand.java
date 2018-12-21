@@ -1,12 +1,9 @@
 package me.lxct.mention;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-
-import static me.lxct.mention.Functions.colorize;
-import static me.lxct.mention.Variable.loadVariables;
-import static me.lxct.mention.Variable.reloadMsg;
 
 public class MentionCommand implements CommandExecutor {
 
@@ -14,9 +11,8 @@ public class MentionCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("mention")) {
             if (args[0].equalsIgnoreCase("reload") || sender.hasPermission("mention.reload")) {
-                Mention.plugin.reloadConfig();
-                loadVariables();
-                sender.sendMessage(colorize(reloadMsg));
+                Bukkit.getPluginManager().disablePlugin(Mention.plugin);
+                Bukkit.getPluginManager().enablePlugin(Mention.plugin);
             }
         }
         return true;

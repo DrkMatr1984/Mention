@@ -27,7 +27,7 @@ class AsyncUpdateChecker {
     private String spigotPluginVersion;
 
     //Constants. Customize to your liking.
-    private static final int ID = 61963; //The ID of your resource. Can be found in the resource URL.
+    private static final int ID = 63390; //The ID of your resource. Can be found in the resource URL.
     private static final String ERR_MSG = failUpdate;
     private static final String UPDATE_MSG = updateMsg + " https://www.spigotmc.org/resources/" + ID + "/updates";
     //PermissionDefault.FALSE == OPs need the permission to be notified.
