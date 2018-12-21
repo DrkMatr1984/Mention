@@ -9,8 +9,6 @@ import static me.lxct.mention.Functions.colorize;
 
 class Variable {
 
-    private static FileConfiguration configYml = Mention.plugin.getConfig();
-
     static String actionBarMsg;
     static String chatMsg;
     static String symbol;
@@ -31,6 +29,9 @@ class Variable {
     static Player vTarget;
 
     static void loadVariables(){
+
+        FileConfiguration configYml = Mention.plugin.getConfig();
+
         reloadMsg = configYml.getString("reload", "&aMention successfully reloaded!");
         checkUpdates = configYml.getBoolean("checkUpdates", true);
         updateMsg = configYml.getString("update", "&a[Mention]&7 A new update is available at&a");
