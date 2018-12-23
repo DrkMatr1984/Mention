@@ -11,6 +11,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import static me.lxct.mention.Functions.colorize;
 import static me.lxct.mention.Functions.formatMsg;
+import static me.lxct.mention.Functions.isVanished;
 import static me.lxct.mention.Variable.*;
 
 public class OnPlayerChat implements Listener {
@@ -20,7 +21,7 @@ public class OnPlayerChat implements Listener {
         String message = event.getMessage();
         vPlayer = event.getPlayer();
         for (Player player : Bukkit.getOnlinePlayers()) {
-            if (msg.contains(player.getName().toUpperCase()) && !player.hasPermission("mention.ignore")) {
+            if (msg.contains(player.getName().toUpperCase()) && !player.hasPermission("mention.ignore") && !isVanished(player)) {
                 vTarget = player;
                 if (useChat) {
                     player.sendMessage(formatMsg(chatMsg));

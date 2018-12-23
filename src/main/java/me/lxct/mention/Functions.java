@@ -1,6 +1,10 @@
 package me.lxct.mention;
 
-import static me.lxct.mention.Variable.*;
+import org.bukkit.entity.Player;
+import org.bukkit.metadata.MetadataValue;
+
+import static me.lxct.mention.Variable.vPlayer;
+import static me.lxct.mention.Variable.vTarget;
 
 class Functions {
 
@@ -17,4 +21,12 @@ class Functions {
         }
         return colorize(string);
     }
+
+    static boolean isVanished(Player player) {
+        for (MetadataValue meta : player.getMetadata("vanished")) {
+            if (meta.asBoolean()) return true;
+        }
+        return false;
+    }
+
 }
