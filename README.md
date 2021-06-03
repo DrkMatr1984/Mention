@@ -60,5 +60,5 @@ I'd like to hear your comments ! <3
 
 
 ## Info
-Spigot Link: [https://www.spigotmc.org/resources/best-view-distance.61963/](https://www.spigotmc.org/resources/best-view-distance.61963/)
+Spigot Link: [https://www.spigotmc.org/resources/mention.63390/](https://www.spigotmc.org/resources/mention.63390/)  
 Github Link: [https://github.com/Lxct/Mention](https://github.com/Lxct/Mention)
