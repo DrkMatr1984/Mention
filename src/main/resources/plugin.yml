@@ -11,6 +11,9 @@ commands:
     permission: mention.reload
 
 permissions:
+  mention.use:
+    description: You can mention players.
+    default: false
   mention.ignore:
     description: You cannot mention these players.
     default: false

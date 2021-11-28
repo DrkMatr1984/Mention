@@ -20,25 +20,27 @@ public class OnPlayerChat implements Listener {
         String msg = event.getMessage().toUpperCase();
         String message = event.getMessage();
         vPlayer = event.getPlayer();
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            if (msg.contains(player.getName().toUpperCase()) && !player.hasPermission("mention.ignore") && !isVanished(player)) {
-                vTarget = player;
-                if (useChat) {
-                    player.sendMessage(formatMsg(chatMsg));
-                }
-                if (useActionBar) {
-                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(formatMsg(actionBarMsg)));
-                }
-                if (playSound) {
-                    player.playSound(player.getLocation(), sound, soundVolume, soundPitch);
-                }
-                if (msg.contains(symbol + player.getName().toUpperCase())) {
-                    message = message.replaceAll(symbol + "(?i)" + player.getName(), colorize(color + symbol + player.getName() + "&r"));
-                } else if (msg.contains(player.getName().toUpperCase())) {
-                    message = message.replaceAll("(?i)" + player.getName(), colorize(color + symbol + player.getName() + "&r"));
+        if(vPlayer.hasPermission("mention.use")) {
+        	for (Player player : Bukkit.getOnlinePlayers()) {
+                if (msg.contains(player.getName().toUpperCase()) && !player.hasPermission("mention.ignore") && !isVanished(player)) {
+                    vTarget = player;
+                    if (useChat) {
+                        player.sendMessage(formatMsg(chatMsg));
+                    }
+                    if (useActionBar) {
+                        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(formatMsg(actionBarMsg)));
+                    }
+                    if (playSound) {
+                        player.playSound(player.getLocation(), sound, soundVolume, soundPitch);
+                    }
+                    if (msg.contains(symbol + player.getName().toUpperCase())) {
+                        message = message.replaceAll(symbol + "(?i)" + player.getName(), colorize(color + symbol + player.getName() + "&r"));
+                    } else if (msg.contains(player.getName().toUpperCase())) {
+                        message = message.replaceAll("(?i)" + player.getName(), colorize(color + symbol + player.getName() + "&r"));
+                    }
                 }
             }
-        }
+        }      
         if (msg.contains(symbol + "EVERYONE") && event.getPlayer().hasPermission("mention.everyone")) {
             for (Player player : Bukkit.getOnlinePlayers()) {
                 vTarget = player;
